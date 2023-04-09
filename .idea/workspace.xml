@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/CropperTest.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/rei2x.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/DragDropFile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CropperTest.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/CropperTest.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +35,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "cropper",
-    "last_opened_file_path": "C:/Users/maksd/WebstormProjects/fullstack/crop_wizard/public",
+    "last_opened_file_path": "C:/Users/maksd/WebstormProjects/fullstack/petly-front",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,7 +60,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680611680316</updated>
-      <workItem from="1680611681372" duration="13273000" />
+      <workItem from="1680611681372" duration="15897000" />
+      <workItem from="1680714292188" duration="743000" />
     </task>
     <servers />
   </component>

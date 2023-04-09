@@ -4,6 +4,7 @@ import { createRef, FC, useState } from "react";
 import Cropper, { ReactCropperElement } from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { FileUploader } from "react-drag-drop-files";
+import { DragDropFile } from "@/components/DragDropFile";
 
 const fileTypes = ["JPG", "PNG"];
 export const CropperTest: FC = () => {
@@ -34,7 +35,8 @@ export const CropperTest: FC = () => {
   return (
     <>
       <div>
-        <FileUploader handleChange={onChange} name="file" types={fileTypes} />
+        <DragDropFile />
+        {/*<FileUploader handleChange={onChange} name="file" types={fileTypes} />*/}
         {/*<input type="file" onChange={onChange} />*/}
         {image && (
           <Cropper
