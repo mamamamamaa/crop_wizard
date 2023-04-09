@@ -2,7 +2,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'CropWizard',
-  description: 'We can crop any your image',
+  description: 'We can crop any your images',
 }
 
 export default function RootLayout({
