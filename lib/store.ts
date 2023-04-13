@@ -14,8 +14,8 @@ const getDefaultInitialState = () => ({
   error: null,
   isLoggedIn: false,
   isLoading: false,
-  email: "",
-  username: "",
+  email: "mamamma@gmail.com",
+  username: "mamamma",
   userImages: null,
 });
 
