@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/Crop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Crop.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +47,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\public" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\public" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,7 +62,7 @@
       <workItem from="1680611681372" duration="15897000" />
       <workItem from="1680714292188" duration="743000" />
       <workItem from="1681408080317" duration="2855000" />
-      <workItem from="1681466354296" duration="826000" />
+      <workItem from="1681466354296" duration="907000" />
     </task>
     <servers />
   </component>

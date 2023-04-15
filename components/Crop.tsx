@@ -13,9 +13,5 @@ export const Crop: FC = () => {
     }
   }, []);
 
-  return (
-    <>
-      <Image src={Monkey} alt="Monkey image" ref={imageRef} />
-    </>
-  );
+  return <Image src={Monkey} alt="Monkey image" ref={imageRef} />;
 };
