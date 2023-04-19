@@ -4,22 +4,20 @@ import { useRouter } from "next/router";
 
 import { useStore } from "@/lib/store";
 import { Logo } from "@/components/Logo/Logo";
+import { githubProfileLink } from "@/public/links";
+import { Navigation } from "@/components/Navigation/Navigation";
 import { UserAvatar } from "@/components/UserAvatar/UserAvatar";
 
 import style from "../Layout/Layout.module.css";
-import { Navigation } from "@/components/Navigation/Navigation";
 
 export const Header: FC = () => {
   const router = useRouter();
   const { isLoggedIn } = useStore((state) => state);
 
   return (
-    <header className={style.layoutContainer}>
+    <header className={style.headerContainer}>
       <Navbar fluid={true} rounded={true}>
-        <Navbar.Brand
-          href="https://github.com/mamamamamaa/crop_wizard"
-          target="_blank"
-        >
+        <Navbar.Brand href={githubProfileLink} target="_blank">
           <Logo />
         </Navbar.Brand>
         {isLoggedIn && <UserAvatar />}

@@ -1,42 +1,33 @@
 import { FC } from "react";
 import { Footer as F, Navbar } from "flowbite-react";
-
-import style from "../Layout/Layout.module.css";
-
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
 import { Logo } from "@/components/Logo/Logo";
+
+import { githubProfileLink, socialLinks } from "@/public/links";
+
+import footerStyles from "./Footer.module.css";
+import layoutStyles from "../Layout/Layout.module.css";
 
 export const Footer: FC = () => {
   return (
-    <F container={true} className={style.layoutContainer}>
-      <div className={`w-full text-center ${style.layoutContainer}`}>
-        <div className="w-full flex justify-center">
-          <Navbar.Brand
-            href="https://github.com/mamamamamaa/crop_wizard"
-            target="_blank"
-          >
+    <F container={true} className={layoutStyles.footerContainer}>
+      <div className={footerStyles.container}>
+        <div className={footerStyles.logoBox}>
+          <Navbar.Brand href={githubProfileLink} target="_blank">
             <Logo />
           </Navbar.Brand>
         </div>
         <F.Divider />
-        <div className="w-full sm:flex items-center justify-between">
-          <F.Copyright
-            href="https://github.com/mamamamamaa/crop_wizard"
-            by="Crop Wizard™"
-            year={2023}
-          />
-          <div className="mt-4 flex space-x-6 sm:mt-0 justify-center gap-2">
-            <F.Icon href="#" icon={BsFacebook} />
-            <F.Icon href="#" icon={BsInstagram} />
-            <F.Icon href="#" icon={BsTwitter} />
-            <F.Icon href="#" icon={BsGithub} />
-            <F.Icon href="#" icon={BsDribbble} />
+        <div className={footerStyles.copyrightBox}>
+          <F.Copyright href={githubProfileLink} by="Crop Wizard™" year={2023} />
+          <div className={footerStyles.linksBox}>
+            {socialLinks.map(({ link, icon }) => (
+              <F.Icon
+                href={link}
+                icon={icon}
+                key={link}
+                className={footerStyles.linkHover}
+              />
+            ))}
           </div>
         </div>
       </div>

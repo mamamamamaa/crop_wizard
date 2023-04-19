@@ -1,0 +1,19 @@
+.footerContainer {
+    @apply w-full text-center;
+}
+
+.logoBox {
+    @apply w-full flex justify-center;
+}
+
+.copyrightBox {
+    @apply w-full sm:flex items-center justify-between;
+}
+
+.linksBox {
+    @apply mt-4 flex space-x-6 sm:mt-0 justify-center gap-2;
+}
+
+.linkHover {
+    @apply hover:text-blue-700;
+}

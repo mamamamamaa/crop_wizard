@@ -11,9 +11,7 @@ export const Layout: FC<Props> = ({ children }) => {
   return (
     <>
       <Header />
-      <main className={style.layoutContainer} style={{ minHeight: "90vh" }}>
-        {children}
-      </main>
+      <main className={style.mainContainer}>{children}</main>
       <Footer />
     </>
   );

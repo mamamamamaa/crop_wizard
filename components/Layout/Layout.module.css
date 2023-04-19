@@ -1,3 +1,11 @@
-.layoutContainer {
+.headerContainer {
+    @apply container block mx-auto rounded-lg border-b shadow;
+}
+
+.mainContainer {
+    @apply container block mx-auto p-4 min-h-[95vh];
+}
+
+.footerContainer {
     @apply container block mx-auto;
 }
