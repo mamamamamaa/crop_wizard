@@ -3,9 +3,9 @@
 }
 
 .logoTextStylesP1 {
-    @apply self-center whitespace-nowrap text-xl font-semibold;
+    @apply text-2xl self-center whitespace-nowrap text-gray-700 font-semibold;
 }
 
 .logoTextStylesP2 {
-    @apply self-center whitespace-nowrap text-xl text-blue-700 font-semibold;
+    @apply text-2xl self-center whitespace-nowrap text-blue-700 font-semibold;
 }

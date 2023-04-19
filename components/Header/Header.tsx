@@ -1,10 +1,14 @@
 import { FC } from "react";
+import Link from "next/link";
 import { Navbar } from "flowbite-react";
 import { useRouter } from "next/router";
-import style from "../Layout/Layout.module.css";
-import { Logo } from "@/components/Logo/Logo";
+
 import { useStore } from "@/lib/store";
+import { Logo } from "@/components/Logo/Logo";
 import { UserAvatar } from "@/components/UserAvatar/UserAvatar";
+
+import layoutStyle from "../Layout/Layout.module.css";
+import headerStyle from "./Header.module.css";
 
 const navLinks = [
   { linkTo: "/", title: "Home" },
@@ -17,7 +21,7 @@ export const Header: FC = () => {
   const { isLoggedIn } = useStore((state) => state);
 
   return (
-    <header className={style.layoutContainer}>
+    <header className={layoutStyle.layoutContainer}>
       <Navbar fluid={true} rounded={true}>
         <Navbar.Brand
           href="https://github.com/mamamamamaa/crop_wizard"
@@ -27,15 +31,30 @@ export const Header: FC = () => {
         </Navbar.Brand>
         {isLoggedIn && <UserAvatar />}
         {!isLoggedIn && <Navbar.Toggle />}
+        {/*<Navbar.Collapse>*/}
+        {/*  {navLinks.map(({ linkTo, title }) => (*/}
+        {/*    <Navbar.Link*/}
+        {/*      href={linkTo}*/}
+        {/*      key={title}*/}
+        {/*      active={router.pathname === linkTo}*/}
+        {/*    >*/}
+        {/*      {title}*/}
+        {/*    </Navbar.Link>*/}
+        {/*  ))}*/}
+        {/*</Navbar.Collapse>*/}
         <Navbar.Collapse>
           {navLinks.map(({ linkTo, title }) => (
-            <Navbar.Link
+            <Link
               href={linkTo}
               key={title}
-              active={router.pathname === linkTo}
+              className={
+                router.pathname === linkTo
+                  ? headerStyle.active
+                  : headerStyle.inactive
+              }
             >
               {title}
-            </Navbar.Link>
+            </Link>
           ))}
         </Navbar.Collapse>
       </Navbar>

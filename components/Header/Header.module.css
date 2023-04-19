@@ -1,0 +1,7 @@
+.active {
+    @apply text-xl bg-blue-700 h-10 flex items-center px-4 py-2 text-white md:text-blue-700 md:h-auto md:bg-transparent md:p-0 rounded;
+}
+
+.inactive {
+    @apply text-xl text-gray-700 h-10 flex items-center px-4 py-2 border-b md:p-0 md:border-0 md:h-auto hover:text-blue-700 rounded;
+}
