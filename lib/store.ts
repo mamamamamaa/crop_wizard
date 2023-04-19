@@ -12,7 +12,7 @@ interface StoreInterface {
 
 const getDefaultInitialState = () => ({
   error: null,
-  isLoggedIn: false,
+  isLoggedIn: true,
   isLoading: false,
   email: "mamamma@gmail.com",
   username: "mamamma",

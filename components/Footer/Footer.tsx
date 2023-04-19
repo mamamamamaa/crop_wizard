@@ -16,7 +16,7 @@ export const Footer: FC = () => {
   return (
     <F container={true} className={style.layoutContainer}>
       <div className={`w-full text-center ${style.layoutContainer}`}>
-        <div className="w-full justify-center">
+        <div className="w-full flex justify-center">
           <Navbar.Brand
             href="https://github.com/mamamamamaa/crop_wizard"
             target="_blank"

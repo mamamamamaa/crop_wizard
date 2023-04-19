@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, Navbar, Dropdown, Avatar } from "flowbite-react";
+import { Navbar } from "flowbite-react";
 import { useRouter } from "next/router";
 import style from "../Layout/Layout.module.css";
 import { Logo } from "@/components/Logo/Logo";
