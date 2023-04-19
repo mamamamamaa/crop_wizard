@@ -1,11 +1,23 @@
 import { useStore } from "@/lib/store";
+import Head from "next/head";
+import { NextPageWithLayout } from "@/pages/_app";
+import { ReactElement } from "react";
+import { Layout } from "@/components/Layout/Layout";
 
-export default function Home() {
+const Home: NextPageWithLayout = () => {
   const { email, username } = useStore((state) => state);
 
   return (
     <div>
-      {email} : {username}
+      <Head>
+        <title>CropWizard</title>
+      </Head>
     </div>
   );
-}
+};
+
+Home.getLayout = function (page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
+
+export default Home;

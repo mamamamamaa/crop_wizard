@@ -1,0 +1,3 @@
+.layoutContainer {
+    @apply container block mx-auto px-10;
+}

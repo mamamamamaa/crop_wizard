@@ -1,0 +1,11 @@
+.logoSvgStyles {
+    @apply w-8;
+}
+
+.logoTextStylesP1 {
+    @apply self-center whitespace-nowrap text-xl font-semibold;
+}
+
+.logoTextStylesP2 {
+    @apply self-center whitespace-nowrap text-xl text-blue-700 font-semibold;
+}
