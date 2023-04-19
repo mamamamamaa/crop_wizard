@@ -1,9 +1,11 @@
 import { FC } from "react";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
+import style from "./UserAvatar.module.css";
+
 export const UserAvatar: FC = () => {
   return (
-    <div className="flex md:order-2 gap-1">
+    <div className={style.avatarContainer}>
       <Dropdown
         arrowIcon={false}
         inline={true}
@@ -16,10 +18,8 @@ export const UserAvatar: FC = () => {
         }
       >
         <Dropdown.Header>
-          <span className="block text-sm">Bonnie Green</span>
-          <span className="block truncate text-sm font-medium">
-            name@flowbite.com
-          </span>
+          <span className={style.nameBox}>Bonnie Green</span>
+          <span className={style.emailBox}>name@flowbite.com</span>
         </Dropdown.Header>
         <Dropdown.Item>Profile</Dropdown.Item>
         <Dropdown.Divider />

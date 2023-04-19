@@ -1,0 +1,11 @@
+.avatarContainer {
+    @apply flex md:order-2 gap-1;
+}
+
+.nameBox {
+    @apply block text-sm;
+}
+
+.emailBox {
+    @apply block truncate text-sm font-medium;
+}
