@@ -1,9 +1,8 @@
 import { createContext, useContext } from "react";
 import { useStore as useZustandStore, createStore } from "zustand";
 
-import { createAuthSlice } from "@/lib/slices/auth";
-import { createImageSlice } from "@/lib/slices/image";
 import { StoreInterface, StoreType } from "@/types/store";
+import { createAuthSlice, createImageSlice } from "@/lib/slices";
 
 const zustandContext = createContext<StoreType | null>(null);
 
