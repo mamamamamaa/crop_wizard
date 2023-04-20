@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 import { Layout } from "@/components/Layout/Layout";
 
 const Home: NextPageWithLayout = () => {
-  const {} = useStore((state) => state);
+  const { isLoading, email } = useStore((state) => state.auth.data);
 
   return (
     <div>

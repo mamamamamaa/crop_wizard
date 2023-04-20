@@ -1,16 +1,9 @@
-import { create, createStore, Mutate, StoreApi } from "zustand";
-import { useStore as useZustandStore } from "zustand";
 import { createContext, useContext } from "react";
-import { AuthSlice, ImageSlice } from "@/types";
+import { useStore as useZustandStore, createStore } from "zustand";
+
 import { createAuthSlice } from "@/lib/slices/auth";
 import { createImageSlice } from "@/lib/slices/image";
-
-interface StoreInterface {
-  auth: AuthSlice;
-  image: ImageSlice;
-}
-
-export type StoreType = ReturnType<typeof initializeStore>;
+import { StoreInterface, StoreType } from "@/types/store";
 
 const zustandContext = createContext<StoreType | null>(null);
 
@@ -27,11 +20,11 @@ export const useStore = <T>(selector: (state: StoreInterface) => T) => {
 export const initializeStore = (
   preloadedState: Partial<StoreInterface> = {}
 ) => {
-  return createStore<StoreInterface>((...a) => ({
+  return createStore<StoreInterface>((...data) => ({
     // @ts-ignore
-    auth: createAuthSlice(...a),
+    auth: createAuthSlice(...data),
     // @ts-ignore
-    image: createImageSlice(...a),
+    image: createImageSlice(...data),
     ...preloadedState,
   }));
 };

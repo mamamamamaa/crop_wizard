@@ -10,7 +10,7 @@ const initialAuthData = () => ({
   accessToken: null,
 });
 
-export const createAuthSlice: StateCreator<AuthSlice> = (set, get) => ({
+export const createAuthSlice: StateCreator<AuthSlice> = (set, get, store) => ({
   data: initialAuthData(),
   current: async () => {},
   login: async () => {},
