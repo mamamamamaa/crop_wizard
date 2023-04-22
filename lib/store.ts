@@ -19,7 +19,9 @@ export const initializeStore = (
   preloadedState: Partial<StoreInterface> = {}
 ) => {
   return createStore<StoreInterface>((...data) => ({
+    // @ts-ignore
     auth: createAuthSlice(...data),
+    // @ts-ignore
     image: createImageSlice(...data),
     ...preloadedState,
   }));
