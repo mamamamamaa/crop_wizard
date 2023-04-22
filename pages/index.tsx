@@ -1,7 +1,7 @@
-import { useStore } from "@/lib/store";
 import Head from "next/head";
-import { NextPageWithLayout } from "@/pages/_app";
 import { ReactElement } from "react";
+
+import { NextPageWithLayout } from "@/pages/_app";
 import { Layout } from "@/components/Layout/Layout";
 
 const Home: NextPageWithLayout = () => {

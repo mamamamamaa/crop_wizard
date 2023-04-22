@@ -24,4 +24,5 @@ export interface AuthSlice {
   register: (loginData: SignUp) => void;
   logout: () => void;
   current: () => void;
+  // setToken: (token: string) => void;
 }

@@ -16,4 +16,12 @@ export const createAuthSlice: StateCreator<AuthSlice> = (set, get, store) => ({
   login: async () => {},
   register: async () => {},
   logout: async () => {},
+  // setToken: (token: string) => {
+  //   set({
+  //     data: {
+  //       ...get().data,
+  //       accessToken: token,
+  //     },
+  //   });
+  // },
 });

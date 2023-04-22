@@ -1,8 +1,9 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { StoreProvider } from "@/lib/StoreProvider";
-import { NextPage } from "next";
+import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { ReactElement, ReactNode } from "react";
+import cookies from "js-cookie";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
