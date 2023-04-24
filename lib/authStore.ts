@@ -3,7 +3,6 @@ import { useStore, createStore } from "zustand";
 
 import { AuthSlice } from "@/types";
 import { persist } from "zustand/middleware";
-import { create } from "domain";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -27,19 +26,6 @@ export const useAuthStore = <T>(selector: (state: AuthSlice) => T) => {
 
   return useStore(store, selector);
 };
-
-// export const initializeAuthStore = (
-//   preloadedState: Partial<AuthSlice> = {}
-// ) => {
-//   return createStore<AuthSlice>((setState, getState, store) => ({
-//     ...initialAuthData(),
-//     ...preloadedState,
-//     current: async () => {},
-//     login: async () => {},
-//     register: async () => {},
-//     logout: async () => {},
-//   }));
-// };
 
 export const initializeAuthStore = (
   preloadedState: Partial<AuthSlice> = {}
