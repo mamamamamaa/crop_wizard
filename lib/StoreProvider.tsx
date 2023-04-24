@@ -1,14 +1,13 @@
 import { PropsWithChildren, useRef } from "react";
 
-import { StoreType } from "@/types/store";
-import { initializeStore, Provider } from "@/lib/store";
+import { initializeAuthStore, Provider, StoreType } from "@/lib/store";
 
 export const StoreProvider = ({ children, ...props }: PropsWithChildren) => {
-  const storeRef = useRef<StoreType>();
+  const authStoreRef = useRef<StoreType>();
 
-  if (!storeRef.current) {
-    storeRef.current = initializeStore(props);
+  if (!authStoreRef.current) {
+    authStoreRef.current = initializeAuthStore(props);
   }
 
-  return <Provider value={storeRef.current}>{children}</Provider>;
+  return <Provider value={authStoreRef.current}>{children}</Provider>;
 };

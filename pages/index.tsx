@@ -1,11 +1,11 @@
-import { useStore } from "@/lib/store";
+import { useAuthStore } from "@/lib/store";
 import Head from "next/head";
 import { NextPageWithLayout } from "@/pages/_app";
 import { ReactElement } from "react";
 import { Layout } from "@/components/Layout/Layout";
 
 const Home: NextPageWithLayout = () => {
-  // const { isLoading, email } = useStore((state) => state.auth.data);
+  const isLoggedIn = useAuthStore((state) => state.data.isLoggedIn);
 
   const googleAuthLink = `${process.env.SERVER}/api/auth/google/callback`;
 
@@ -15,7 +15,7 @@ const Home: NextPageWithLayout = () => {
         <title>CropWizard</title>
       </Head>
 
-      <a href={googleAuthLink}>Google auth</a>
+      <a href={googleAuthLink}>Google auth - {String(isLoggedIn)}</a>
     </div>
   );
 };
