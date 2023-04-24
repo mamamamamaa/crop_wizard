@@ -18,8 +18,7 @@ export type SignUp = {
   password: string;
 };
 
-export interface AuthSlice {
-  data: AuthData;
+export interface AuthSlice extends AuthData {
   login: (loginData: SignIn) => void;
   register: (loginData: SignUp) => void;
   logout: () => void;

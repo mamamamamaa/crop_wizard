@@ -5,7 +5,6 @@ export interface ImageData {
   error: string | null;
 }
 
-export interface ImageSlice {
-  data: ImageData;
+export interface ImageSlice extends ImageData {
   saveImage: () => void;
 }

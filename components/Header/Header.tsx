@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Navbar } from "flowbite-react";
 import { useRouter } from "next/router";
 
-import { useAuthStore } from "@/lib/store";
+import { useAuthStore } from "@/lib/authStore";
 import { Logo } from "@/components/Logo/Logo";
 import { githubProfileLink } from "@/public/links";
 import { Navigation } from "@/components/Navigation/Navigation";
@@ -12,7 +12,7 @@ import style from "../Layout/Layout.module.css";
 
 export const Header: FC = () => {
   const router = useRouter();
-  const isLoggedIn = useAuthStore((state) => state.data.isLoggedIn);
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
   return (
     <header className={style.headerContainer}>
