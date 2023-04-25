@@ -7,8 +7,7 @@ import { useImageStore } from "@/lib/imageStore";
 
 const Home: NextPageWithLayout = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-  const a = useImageStore((state) => state.isLoading);
-  const saveImage = useImageStore((state) => state.saveImage);
+  const login = useAuthStore((state) => state.login);
 
   const googleAuthLink = `${process.env.SERVER}/api/auth/google/callback`;
 
@@ -18,11 +17,17 @@ const Home: NextPageWithLayout = () => {
         <title>CropWizard</title>
       </Head>
 
-      <a href={googleAuthLink}>
-        Google auth - {String(isLoggedIn)} - {String(a)}
-      </a>
+      <a href={googleAuthLink}>Google auth - {String(isLoggedIn)}</a>
 
-      <button type="button" onClick={() => saveImage()}>
+      <button
+        type="button"
+        onClick={() =>
+          login({
+            email: "string",
+            password: "string",
+          })
+        }
+      >
         Toggle
       </button>
     </div>

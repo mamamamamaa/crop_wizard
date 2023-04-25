@@ -36,13 +36,14 @@ export const initializeAuthStore = (
         ...initialAuthData(),
         ...preloadedState,
         current: async () => {},
-        login: async () => {},
+        login: async () => {
+          set({ isLoggedIn: !get().isLoggedIn });
+        },
         register: async () => {},
         logout: async () => {},
       }),
       {
         name: "auth-store",
-        getStorage: () => localStorage,
       }
     )
   );
