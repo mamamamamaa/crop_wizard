@@ -1,5 +1,5 @@
-import { NextFetchEvent, NextRequest, NextResponse } from "next/server";
-import { useAuthStore } from "@/lib/authStore";
+import { NextRequest, NextResponse } from "next/server";
+
 const allowedParams = ["accessToken", "user"];
 
 export const config = {
@@ -24,5 +24,7 @@ export async function middleware(req: NextRequest) {
     cookiesData.forEach(({ key, data }) => result.cookies.set(key, data));
 
     return result;
-  } else return NextResponse.next();
+  }
+
+  return NextResponse.next();
 }

@@ -1,7 +1,7 @@
-import { NextPageWithLayout } from "@/pages/_app";
+import { TNextPageWithLayout } from "@/pages/_app";
 import { ReactElement } from "react";
 
-const Register: NextPageWithLayout = () => {
+const Register: TNextPageWithLayout = () => {
   return <>Register Page</>;
 };
 

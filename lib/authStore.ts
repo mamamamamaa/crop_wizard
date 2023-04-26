@@ -1,8 +1,9 @@
 import { createContext, useContext } from "react";
-import { useStore, createStore } from "zustand";
+import { useStore, createStore, StateCreator, State, create } from "zustand";
 
 import { AuthSlice } from "@/types";
-import { persist } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
+import Cookie from "js-cookie";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -37,10 +38,13 @@ export const initializeAuthStore = (
         ...preloadedState,
         current: async () => {},
         login: async () => {
-          set({ isLoggedIn: !get().isLoggedIn });
+          set({ isLoading: !get().isLoading });
         },
         register: async () => {},
         logout: async () => {},
+        setAccessToken: (token) => {
+          set({ accessToken: token });
+        },
       }),
       {
         name: "auth-store",

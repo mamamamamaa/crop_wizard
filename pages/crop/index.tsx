@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
-import { NextPageWithLayout } from "@/pages/_app";
+import { TNextPageWithLayout } from "@/pages/_app";
 import { Layout } from "@/components/Layout/Layout";
 
-const Crop: NextPageWithLayout = () => {
+const Crop: TNextPageWithLayout = () => {
   return <>Crop Page</>;
 };
 
