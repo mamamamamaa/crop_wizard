@@ -27,36 +27,15 @@ export const useAuthStore = <T>(selector: (state: AuthSlice) => T) => {
   return useStore(store, selector);
 };
 
-// export const initializeAuthStore = (
-//   preloadedState: Partial<AuthSlice> = {}
-// ) => {
-//   return createStore<AuthSlice>()(
-//     devtools(
-//       persist(
-//         (set, get, api) => ({
-//           ...initialAuthData(),
-//           ...preloadedState,
-//           current: async () => {},
-//           login: async () => {
-//             set({ isLoading: !get().isLoading });
-//           },
-//           register: async () => {},
-//           logout: async () => {},
-//           setAccessToken: (token) => {
-//             set({ accessToken: token });
-//           },
-//         }),
-//         {
-//           name: "auth-store",
-//         }
-//       )
-//     )
-//   );
-// };
-
 export const initializeAuthStore = (
   preloadedState: Partial<AuthSlice> = {}
 ) => {
+  const isEmpty = Object.keys(preloadedState).length === 0;
+
+  if (!isEmpty) {
+    preloadedState.isLoggedIn = true;
+  }
+
   return createStore<AuthSlice>()(
     devtools((set, get, api) => ({
       ...initialAuthData(),
