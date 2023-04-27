@@ -4,6 +4,7 @@ import {
   initializeAuthStore,
   AuthProvider,
   AuthStoreType,
+  useAuthStore,
 } from "@/lib/authStore";
 import {
   ImageProvider,
@@ -14,7 +15,6 @@ import {
 export const StoreProvider = ({ children, ...props }: PropsWithChildren) => {
   const authStoreRef = useRef<AuthStoreType>();
   const imageStoreRef = useRef<ImageStoreType>();
-
   if (!authStoreRef.current) {
     authStoreRef.current = initializeAuthStore(props);
   }

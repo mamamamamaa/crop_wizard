@@ -2,8 +2,10 @@ import { FC } from "react";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
 import style from "./UserAvatar.module.css";
+import { useAuthStore } from "@/lib/authStore";
 
 export const UserAvatar: FC = () => {
+  const { username, email } = useAuthStore((state) => state);
   return (
     <div className={style.avatarContainer}>
       <Dropdown
@@ -18,8 +20,8 @@ export const UserAvatar: FC = () => {
         }
       >
         <Dropdown.Header>
-          <span className={style.nameBox}>Bonnie Green</span>
-          <span className={style.emailBox}>name@flowbite.com</span>
+          <span className={style.nameBox}>{username}</span>
+          <span className={style.emailBox}>{email}</span>
         </Dropdown.Header>
         <Dropdown.Item>Profile</Dropdown.Item>
         <Dropdown.Divider />

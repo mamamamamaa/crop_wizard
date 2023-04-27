@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
-import type { TNextPageWithLayout } from "../_app";
 
 import { Layout } from "@/components/Layout/Layout";
+import { TNextPageWithLayout } from "@/types";
 
 const Login: TNextPageWithLayout = () => {
   return <p>hello world</p>;

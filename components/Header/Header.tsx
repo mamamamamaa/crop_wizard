@@ -20,8 +20,8 @@ export const Header: FC = () => {
         <Navbar.Brand href={githubProfileLink} target="_blank">
           <Logo />
         </Navbar.Brand>
-        {isLoggedIn && <UserAvatar />}
-        {!isLoggedIn && <Navbar.Toggle />}
+        {!isLoggedIn && <UserAvatar />}
+        {isLoggedIn && <Navbar.Toggle />}
         <Navigation router={router} />
       </Navbar>
     </header>
