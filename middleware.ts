@@ -20,6 +20,8 @@ export async function middleware(req: NextRequest) {
 
   if (changed && cookiesData) {
     const result = NextResponse.redirect(url);
+    const expirationTime = new Date();
+    expirationTime.setHours(expirationTime.getHours() + 1);
 
     cookiesData.forEach(({ key, data }) => result.cookies.set(key, data));
 
