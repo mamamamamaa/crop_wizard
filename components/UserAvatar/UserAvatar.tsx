@@ -5,7 +5,7 @@ import style from "./UserAvatar.module.css";
 import { useAuthStore } from "@/lib/authStore";
 
 export const UserAvatar: FC = () => {
-  const { username, email } = useAuthStore((state) => state);
+  const { username, email, logout } = useAuthStore((state) => state);
   return (
     <div className={style.avatarContainer}>
       <Dropdown
@@ -25,7 +25,7 @@ export const UserAvatar: FC = () => {
         </Dropdown.Header>
         <Dropdown.Item>Profile</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item>Sign out</Dropdown.Item>
+        <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
       </Dropdown>
       <Navbar.Toggle />
     </div>

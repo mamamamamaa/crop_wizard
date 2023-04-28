@@ -23,5 +23,4 @@ export interface AuthSlice extends AuthData {
   register: (loginData: SignUp) => void;
   logout: () => void;
   current: () => void;
-  setAccessToken: (token: string) => void;
 }

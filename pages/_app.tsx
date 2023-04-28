@@ -27,6 +27,7 @@ CustomApp.getInitialProps = async (context: AppContext) => {
   if (!user) {
     return { ...ctx };
   }
+
   const parsedUser = JSON.parse(String(user));
 
   const initialZustandState = {

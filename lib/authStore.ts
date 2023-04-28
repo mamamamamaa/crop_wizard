@@ -2,7 +2,9 @@ import { createContext, useContext } from "react";
 import { useStore, createStore } from "zustand";
 
 import { AuthSlice } from "@/types";
-import { devtools, persist } from "zustand/middleware";
+import { devtools } from "zustand/middleware";
+import { removeCookies, setCookies } from "@/utils/cookies";
+import axios from "axios";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -41,13 +43,20 @@ export const initializeAuthStore = (
       ...initialAuthData(),
       ...preloadedState,
       current: async () => {},
-      login: async () => {
-        set({ isLoading: !get().isLoading });
+      login: async (loginData) => {
+        const { data } = await axios.post(
+          "http://localhost:9999/api/auth/login",
+          loginData
+        );
+
+        console.log(data);
+
+        setCookies(data);
       },
       register: async () => {},
-      logout: async () => {},
-      setAccessToken: (token) => {
-        set({ accessToken: token });
+      logout: async () => {
+        removeCookies("accessToken", "user");
+        set(initialAuthData());
       },
     }))
   );

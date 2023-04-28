@@ -7,8 +7,8 @@ import { TNextPageWithLayout } from "@/types";
 
 const Home: TNextPageWithLayout = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-  const login = useAuthStore((state) => state.login);
   const token = useAuthStore((state) => state.accessToken);
+  const login = useAuthStore((state) => state.login);
 
   const googleAuthLink = `${process.env.SERVER}/api/auth/google/callback`;
 
@@ -19,18 +19,19 @@ const Home: TNextPageWithLayout = () => {
       </Head>
 
       <a href={googleAuthLink}>Google auth - {String(isLoggedIn)}</a>
-
-      <button
-        type="button"
-        onClick={() =>
-          login({
-            email: "string",
-            password: "string",
-          })
-        }
-      >
-        Toggle
-      </button>
+      <div>
+        <button
+          type="button"
+          onClick={() =>
+            login({
+              email: "nevawew278@djpich.com",
+              password: "qwerty123456",
+            })
+          }
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 };
