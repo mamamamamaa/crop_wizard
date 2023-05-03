@@ -5,19 +5,13 @@ import style from "./UserAvatar.module.css";
 import { useAuthStore } from "@/lib/authStore";
 
 export const UserAvatar: FC = () => {
-  const { username, email, logout } = useAuthStore((state) => state);
+  const { username, email, logout, avatarUrl } = useAuthStore((state) => state);
   return (
     <div className={style.avatarContainer}>
       <Dropdown
         arrowIcon={false}
         inline={true}
-        label={
-          <Avatar
-            alt="User settings"
-            img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-            rounded={true}
-          />
-        }
+        label={<Avatar alt="User settings" img={avatarUrl} rounded={true} />}
       >
         <Dropdown.Header>
           <span className={style.nameBox}>{username}</span>

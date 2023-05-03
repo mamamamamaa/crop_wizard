@@ -5,6 +5,7 @@ export interface AuthData {
   username: string | null;
   email: string | null;
   accessToken: string | null;
+  avatarUrl: string |null
 }
 
 export type SignIn = {

@@ -34,6 +34,7 @@ CustomApp.getInitialProps = async (context: AppContext) => {
     accessToken: accessToken,
     username: parsedUser.username,
     email: parsedUser.email,
+    avatarUrl: parsedUser.avatarUrl,
   };
 
   return { ...ctx, pageProps: { ...ctx.pageProps, initialZustandState } };

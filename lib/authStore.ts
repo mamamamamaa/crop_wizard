@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { useStore, createStore } from "zustand";
+import { createStore, useStore } from "zustand";
 
 import { AuthSlice } from "@/types";
 import { devtools } from "zustand/middleware";
@@ -15,6 +15,7 @@ const initialAuthData = () => ({
   username: null,
   email: null,
   accessToken: null,
+  avatarUrl: null,
 });
 
 export type AuthStoreType = ReturnType<typeof initializeAuthStore>;
@@ -48,9 +49,6 @@ export const initializeAuthStore = (
           "http://localhost:9999/api/auth/login",
           loginData
         );
-
-        console.log(data);
-
         setCookies(data);
       },
       register: async () => {},
