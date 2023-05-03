@@ -1,10 +1,10 @@
+import axios from "axios";
 import { createContext, useContext } from "react";
 import { createStore, useStore } from "zustand";
 
 import { AuthSlice } from "@/types";
 import { devtools } from "zustand/middleware";
 import { removeCookies, setCookies } from "@/utils/cookies";
-import axios from "axios";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -46,7 +46,7 @@ export const initializeAuthStore = (
       current: async () => {},
       login: async (loginData) => {
         const { data } = await axios.post(
-          "http://localhost:9999/api/auth/login",
+          `${process.env.SERVER}/api/auth/login`,
           loginData
         );
         setCookies(data);
