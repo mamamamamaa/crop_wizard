@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { TOKEN } from "@/utils/consts";
 
-const allowedParams = ["accessToken", "user"];
+const allowedParams = [TOKEN];
 
 export const config = {
   matcher: "/",

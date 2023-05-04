@@ -3,6 +3,7 @@ import { StoreProvider } from "@/lib/StoreProvider";
 import qs from "querystring";
 import App, { AppContext } from "next/app";
 import { TProps } from "@/types";
+import fetch, { setAuthHeader } from "@/utils/fetch";
 
 function CustomApp({ Component, pageProps }: TProps) {
   const getLayout = Component.getLayout ?? ((page) => page);
@@ -22,22 +23,28 @@ CustomApp.getInitialProps = async (context: AppContext) => {
 
   const parsedCookies = qs.decode(cookies, "; ");
 
-  const { accessToken, user } = parsedCookies;
+  const { accessToken } = parsedCookies as { accessToken: string };
 
-  if (!user) {
+  if (!accessToken) {
     return { ...ctx };
   }
 
-  const parsedUser = JSON.parse(String(user));
+  setAuthHeader(accessToken);
 
-  const initialZustandState = {
-    accessToken: accessToken,
-    username: parsedUser.username,
-    email: parsedUser.email,
-    avatarUrl: parsedUser.avatarUrl,
-  };
+  try {
+    const { data } = await fetch.get(`/api/auth/current`);
 
-  return { ...ctx, pageProps: { ...ctx.pageProps, initialZustandState } };
+    const initialZustandState = {
+      accessToken: accessToken,
+      username: data.username,
+      email: data.email,
+      avatarUrl: data.avatarUrl,
+    };
+
+    return { ...ctx, pageProps: { ...ctx.pageProps, initialZustandState } };
+  } catch (error) {
+    return { ...ctx };
+  }
 };
 
 export default CustomApp;

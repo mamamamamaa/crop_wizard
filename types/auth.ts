@@ -5,12 +5,21 @@ export interface AuthData {
   username: string | null;
   email: string | null;
   accessToken: string | null;
-  avatarUrl: string |null
+  avatarUrl: string | null;
 }
 
 export type SignIn = {
   email: string;
   password: string;
+};
+
+export type SignInReturns = {
+  accessToken: string;
+  user: {
+    username: string;
+    email: string;
+    avatarUrl: string;
+  };
 };
 
 export type SignUp = {

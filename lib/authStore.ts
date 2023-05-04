@@ -1,9 +1,10 @@
-import axios from "axios";
-import { createContext, useContext } from "react";
 import { createStore, useStore } from "zustand";
+import { createContext, useContext } from "react";
 
-import { AuthSlice } from "@/types";
+import fetch from "@/utils/fetch";
+import { TOKEN } from "@/utils/consts";
 import { devtools } from "zustand/middleware";
+import { AuthSlice, SignInReturns } from "@/types";
 import { removeCookies, setCookies } from "@/utils/cookies";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
@@ -45,15 +46,34 @@ export const initializeAuthStore = (
       ...preloadedState,
       current: async () => {},
       login: async (loginData) => {
-        const { data } = await axios.post(
-          `${process.env.SERVER}/api/auth/login`,
-          loginData
-        );
-        setCookies(data);
+        try {
+          set({ isLoading: true });
+          const { data } = await fetch.post<SignInReturns>(
+            "/api/auth/login",
+            loginData
+          );
+          setCookies(data);
+
+          const { accessToken, user } = data;
+          const { email, username, avatarUrl } = user;
+
+          set({
+            accessToken,
+            email,
+            username,
+            avatarUrl,
+            isLoading: false,
+            isLoggedIn: true,
+          });
+        } catch (error) {
+          if (error instanceof Error) {
+            set({ isLoading: false, error: error.message });
+          }
+        }
       },
       register: async () => {},
       logout: async () => {
-        removeCookies("accessToken", "user");
+        removeCookies(TOKEN);
         set(initialAuthData());
       },
     }))
