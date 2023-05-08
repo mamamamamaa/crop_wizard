@@ -11,7 +11,9 @@ export const UserAvatar: FC = () => {
       <Dropdown
         arrowIcon={false}
         inline={true}
-        label={<Avatar alt="User settings" img={avatarUrl} rounded={true} />}
+        label={
+          <Avatar alt="User settings" img={avatarUrl || ""} rounded={true} />
+        }
       >
         <Dropdown.Header>
           <span className={style.nameBox}>{username}</span>
