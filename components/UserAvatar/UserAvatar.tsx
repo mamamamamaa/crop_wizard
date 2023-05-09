@@ -6,6 +6,7 @@ import { useAuthStore } from "@/lib/authStore";
 
 export const UserAvatar: FC = () => {
   const { username, email, logout, avatarUrl } = useAuthStore((state) => state);
+
   return (
     <div className={style.avatarContainer}>
       <Dropdown
