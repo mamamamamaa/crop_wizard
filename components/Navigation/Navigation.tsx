@@ -4,18 +4,21 @@ import { Navbar } from "flowbite-react";
 import { NextRouter } from "next/router";
 
 import style from "./Navigaion.module.css";
-
-const navLinks = [
-  { linkTo: "/", title: "Home" },
-  { linkTo: "/crop", title: "Crop" },
-  { linkTo: "/login", title: "Sign In" },
-];
+import { useAuthStore } from "@/lib/authStore";
 
 interface Props {
   router: NextRouter;
 }
 
 export const Navigation: FC<Props> = ({ router }) => {
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+
+  const navLinks = [
+    { linkTo: "/", title: "Home", visible: true },
+    { linkTo: "/crop", title: "Crop", visible: isLoggedIn },
+    { linkTo: "/login", title: "Sign In", visible: !isLoggedIn },
+  ];
+
   return (
     <Navbar.Collapse>
       {navLinks.map(({ linkTo, title }) => (
