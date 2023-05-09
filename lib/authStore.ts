@@ -36,8 +36,14 @@ export const initializeAuthStore = (
 ) => {
   const isEmpty = Object.keys(preloadedState).length === 0;
 
+  preloadedState.isLoggedIn = !isEmpty;
+  setCookies({ isLoggedIn: true });
+
   if (!isEmpty) {
     preloadedState.isLoggedIn = true;
+    setCookies({ isLoggedIn: true });
+  } else {
+    setCookies({ isLoggedIn: false });
   }
 
   return createStore<AuthSlice>()(
@@ -52,7 +58,8 @@ export const initializeAuthStore = (
             "/api/auth/login",
             loginData
           );
-          setCookies(data);
+
+          setCookies({ accessToken: data.accessToken, isLoggedIn: true });
 
           const { accessToken, user } = data;
           const { email, username, avatarUrl } = user;

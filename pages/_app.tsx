@@ -36,9 +36,8 @@ CustomApp.getInitialProps = async (context: AppContext) => {
 
     const initialZustandState = {
       accessToken: accessToken,
-      username: data.username,
-      email: data.email,
-      avatarUrl: data.avatarUrl,
+      isLoggedIn: true,
+      ...data,
     };
 
     return { ...ctx, pageProps: { ...ctx.pageProps, initialZustandState } };

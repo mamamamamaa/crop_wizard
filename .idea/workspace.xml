@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +61,12 @@
       <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\components\Crop" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -104,6 +108,7 @@
       <workItem from="1683399751496" duration="1147000" />
       <workItem from="1683406207522" duration="112000" />
       <workItem from="1683406477201" duration="599000" />
+      <workItem from="1683563807061" duration="3800000" />
     </task>
     <servers />
   </component>
