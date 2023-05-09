@@ -21,15 +21,20 @@ export const Navigation: FC<Props> = ({ router }) => {
 
   return (
     <Navbar.Collapse>
-      {navLinks.map(({ linkTo, title }) => (
-        <Link
-          href={linkTo}
-          key={title}
-          className={router.pathname === linkTo ? style.active : style.inactive}
-        >
-          {title}
-        </Link>
-      ))}
+      {navLinks.map(
+        ({ linkTo, title, visible }) =>
+          visible && (
+            <Link
+              href={linkTo}
+              key={title}
+              className={
+                router.pathname === linkTo ? style.active : style.inactive
+              }
+            >
+              {title}
+            </Link>
+          )
+      )}
     </Navbar.Collapse>
   );
 };
