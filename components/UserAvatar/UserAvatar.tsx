@@ -3,6 +3,7 @@ import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
 import style from "./UserAvatar.module.css";
 import { useAuthStore } from "@/lib/authStore";
+import { PLACEHOLDER_IMAGE } from "@/utils/consts";
 
 export const UserAvatar: FC = () => {
   const { username, email, logout, avatarUrl } = useAuthStore((state) => state);
@@ -13,7 +14,11 @@ export const UserAvatar: FC = () => {
         arrowIcon={false}
         inline={true}
         label={
-          <Avatar alt="User settings" img={avatarUrl || ""} rounded={true} />
+          <Avatar
+            alt="User settings"
+            img={avatarUrl || PLACEHOLDER_IMAGE}
+            rounded={true}
+          />
         }
       >
         <Dropdown.Header>

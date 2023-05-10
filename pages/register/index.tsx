@@ -1,13 +1,13 @@
-import { TNextPageWithLayout } from "@/types";
-import { ReactElement } from "react";
-import { Layout } from "@/components/Layout/Layout";
+import { TNextPageWithLayout } from "@/types"
+import { ReactElement } from "react"
+import { AuthLayout } from "@/components/AuthLayout/AuthLayout"
 
 const Register: TNextPageWithLayout = () => {
-  return <>Register Page</>;
-};
+  return <>Register Page</>
+}
 
 Register.getLayout = function (page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <AuthLayout>{page}</AuthLayout>
+}
 
-export default Register;
+export default Register

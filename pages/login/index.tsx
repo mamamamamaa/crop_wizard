@@ -1,14 +1,13 @@
 import type { ReactElement } from "react";
-
-import { Layout } from "@/components/Layout/Layout";
 import { TNextPageWithLayout } from "@/types";
+import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 
 const Login: TNextPageWithLayout = () => {
   return <p>hello world</p>;
 };
 
 Login.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
+  return <AuthLayout>{page}</AuthLayout>;
 };
 
 export default Login;

@@ -1,0 +1,4 @@
+.mainCower {
+    background-image: url("../../public/smock_bg.png");
+    @apply bg-cover bg-no-repeat bg-center w-screen h-screen;
+}

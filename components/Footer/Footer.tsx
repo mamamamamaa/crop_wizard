@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { Footer as F, Navbar } from "flowbite-react";
-import { Logo } from "@/components/Logo/Logo";
+import { FC } from "react"
+import { Footer as F, Navbar } from "flowbite-react"
+import { Logo } from "@/components/Logo/Logo"
 
-import { githubProfileLink, socialLinks } from "@/public/links";
+import { githubProfileLink, socialLinks } from "@/public/links"
 
-import footerStyles from "./Footer.module.css";
-import layoutStyles from "../Layout/Layout.module.css";
+import footerStyles from "./Footer.module.css"
+import layoutStyles from "../Layout/Layout.module.css"
 
 export const Footer: FC = () => {
   return (
@@ -32,5 +32,5 @@ export const Footer: FC = () => {
         </div>
       </div>
     </F>
-  );
-};
+  )
+}

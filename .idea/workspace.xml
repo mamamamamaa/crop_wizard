@@ -63,7 +63,9 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
   </component>
@@ -109,6 +111,7 @@
       <workItem from="1683406207522" duration="112000" />
       <workItem from="1683406477201" duration="599000" />
       <workItem from="1683563807061" duration="3800000" />
+      <workItem from="1683609453587" duration="28984000" />
     </task>
     <servers />
   </component>

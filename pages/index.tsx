@@ -1,15 +1,15 @@
-import { useAuthStore } from "@/lib/authStore";
-import Head from "next/head";
+import { useAuthStore } from "@/lib/authStore"
+import Head from "next/head"
 
-import { ReactElement } from "react";
-import { Layout } from "@/components/Layout/Layout";
-import { TNextPageWithLayout } from "@/types";
+import { ReactElement } from "react"
+import { Layout } from "@/components/Layout/Layout"
+import { TNextPageWithLayout } from "@/types"
 
 const Home: TNextPageWithLayout = () => {
-  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-  const login = useAuthStore((state) => state.login);
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn)
+  const login = useAuthStore((state) => state.login)
 
-  const googleAuthLink = `${process.env.SERVER}/api/auth/google/callback`;
+  const googleAuthLink = `${process.env.SERVER}/api/auth/google/callback`
 
   return (
     <>
@@ -31,11 +31,11 @@ const Home: TNextPageWithLayout = () => {
         </button>
       </div>
     </>
-  );
-};
+  )
+}
 
 Home.getLayout = function (page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
-export default Home;
+export default Home
