@@ -1,9 +1,10 @@
 import type { ReactElement } from "react";
 import { TNextPageWithLayout } from "@/types";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
+import { LoginCard } from "@/components/LoginCard/LoginCard";
 
 const Login: TNextPageWithLayout = () => {
-  return <p>hello world</p>;
+  return <LoginCard />;
 };
 
 Login.getLayout = function getLayout(page: ReactElement) {
