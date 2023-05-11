@@ -2,7 +2,7 @@ import { createStore, useStore } from "zustand";
 import { createContext, useContext } from "react";
 
 import fetch from "@/utils/fetch";
-import { TOKEN } from "@/utils/consts";
+import { TOKEN } from "@/public/consts";
 import { devtools } from "zustand/middleware";
 import { AuthSlice, SignInReturns } from "@/types";
 import { removeCookies, setCookies } from "@/utils/cookies";

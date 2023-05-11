@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/components/LoginCard/LoginCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/LoginCard/LoginCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/AuthCard/AuthCard.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/AuthCard/AuthCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/AuthForm/AuthForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/GoogleAuth/GoogleAuth.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/GoogleAuth/GoogleAuth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/LoginCard/LoginCard.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/LoginCard/LoginCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Logo/Logo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/Logo/Logo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Logo/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/UserAvatar/UserAvatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/UserAvatar/UserAvatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/authStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/authStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/consts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/public/consts.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +72,7 @@
       <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\types" />
       <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\components\Logo" />
       <recent name="C:\Users\maksd\WebstormProjects\fullstack\crop_wizard\public" />
@@ -114,7 +130,7 @@
       <workItem from="1683406477201" duration="599000" />
       <workItem from="1683563807061" duration="3800000" />
       <workItem from="1683609453587" duration="28984000" />
-      <workItem from="1683784456572" duration="5421000" />
+      <workItem from="1683784456572" duration="20398000" />
     </task>
     <servers />
   </component>

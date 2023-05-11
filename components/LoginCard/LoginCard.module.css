@@ -1,7 +1,0 @@
-.cardWrapper {
-    @apply w-[500px] h-[750px] bg-white rounded-3xl shadow-2xl px-14 py-10
-}
-
-.sectionWrapper {
-    @apply flex h-screen w-screen p-10 items-center justify-center xl:justify-end
-}

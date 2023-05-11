@@ -1,0 +1,56 @@
+.cardWrapper {
+    @apply w-[450px] bg-white rounded-3xl shadow-2xl px-14 py-10;
+}
+
+.sectionWrapper {
+    @apply flex h-screen w-screen items-center justify-center gap-24;
+}
+
+.logoSection{
+    @apply hidden md:visible md:flex;
+}
+
+.header {
+    @apply text-[45px] font-bold text-gray-700;
+}
+
+.formSection {
+    @apply text-gray-500;
+}
+
+.form {
+    @apply mb-10
+}
+
+.newUser {
+    @apply mb-6;
+}
+
+.registerLink {
+    @apply text-blue-500 hover:underline;
+}
+
+
+.inputGroup {
+    @apply flex flex-col gap-4;
+}
+
+.relative {
+    @apply mb-10 flex justify-center items-center
+}
+
+.relative::before,
+.relative::after {
+    content: " ";
+    position: relative;
+    width: 42%;
+    border-top: 1px solid #ccc;
+}
+
+.relative::before {
+    left: -5%;
+}
+
+.relative::after {
+    right: -5%;
+}

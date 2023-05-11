@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { TOKEN } from "@/utils/consts";
+import { TOKEN } from "@/public/consts";
 import { expirationTime } from "@/utils/expirationTime";
 
 const allowedParams = [TOKEN];
