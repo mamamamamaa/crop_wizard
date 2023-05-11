@@ -1,5 +1,5 @@
 .cardWrapper {
-    @apply flex w-[500px] h-[750px] bg-white rounded-3xl shadow-2xl px-14 py-10
+    @apply w-[500px] h-[750px] bg-white rounded-3xl shadow-2xl px-14 py-10
 }
 
 .sectionWrapper {

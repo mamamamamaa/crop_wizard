@@ -1,6 +1,7 @@
 /**
  * @type {import('@types/tailwindcss/tailwind-config').TailwindConfig}
  */
+
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -8,5 +9,10 @@ module.exports = {
     "./public/**/*.html",
   ],
   plugins: [require("flowbite/plugin")],
-  theme: {},
+  theme: {
+    extend: {},
+    fontSize: {
+      "2xl": "3rem",
+    },
+  },
 };
