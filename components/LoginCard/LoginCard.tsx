@@ -1,7 +1,8 @@
 import { FC } from "react";
-import style from "./LoginCard.module.css";
 import Link from "next/link";
 import { Label, TextInput } from "flowbite-react";
+
+import style from "./LoginCard.module.css";
 
 export const LoginCard: FC = () => {
   return (

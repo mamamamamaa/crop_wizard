@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/LoginCard/LoginCard.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/LoginCard/LoginCard.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/LoginCard/LoginCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/LoginCard/LoginCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +114,7 @@
       <workItem from="1683406477201" duration="599000" />
       <workItem from="1683563807061" duration="3800000" />
       <workItem from="1683609453587" duration="28984000" />
-      <workItem from="1683784456572" duration="4807000" />
+      <workItem from="1683784456572" duration="5421000" />
     </task>
     <servers />
   </component>
