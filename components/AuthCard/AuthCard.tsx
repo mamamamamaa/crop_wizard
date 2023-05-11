@@ -1,22 +1,14 @@
 import { FC } from "react";
-import { SubmitHandler, UseFormReturn } from "react-hook-form";
 
-import { SignIn } from "@/types";
+import { AuthCardProps } from "@/types";
 
 import style from "./AuthCard.module.css";
 import { Logo } from "@/components/Logo/Logo";
 import { GoogleAuth } from "@/components/GoogleAuth/GoogleAuth";
-
-export interface AuthCardProps {
-  register: UseFormReturn;
-  handleSubmit: UseFormReturn;
-  header: string;
-  pathToReturn: string;
-  inputData: { inputId: string; value: string; placeholder: string }[];
-}
+import { AuthForm } from "@/components/AuthForm/AuthForm";
 
 export const AuthCard: FC<AuthCardProps> = (props) => {
-  const onSubmit: SubmitHandler<SignIn> = (data) => console.log(data);
+  const { header } = props;
 
   return (
     <>
@@ -26,13 +18,12 @@ export const AuthCard: FC<AuthCardProps> = (props) => {
         </section>
         <section className={style.cardWrapper}>
           <header>
-            <h1 className={style.header}>Sign In</h1>
+            <h1 className={style.header}>{header}</h1>
           </header>
           <section className={style.formSection}>
+            <AuthForm {...props} />
             <div className={style.relative}>OR</div>
-            <section>
-              <GoogleAuth />
-            </section>
+            <GoogleAuth />
           </section>
         </section>
       </div>

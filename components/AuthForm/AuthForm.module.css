@@ -1,0 +1,15 @@
+.newUser {
+    @apply mb-6;
+}
+
+.registerLink {
+    @apply text-blue-500 hover:underline;
+}
+
+.inputGroup {
+    @apply flex flex-col gap-4;
+}
+
+.form {
+    @apply mb-10
+}

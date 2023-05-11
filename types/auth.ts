@@ -1,4 +1,6 @@
-export interface AuthData {
+import { UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+
+export type AuthData = {
   isLoggedIn: boolean;
   isLoading: boolean;
   error: string | null;
@@ -6,7 +8,7 @@ export interface AuthData {
   email: string | null;
   accessToken: string | null;
   avatarUrl: string | null;
-}
+};
 
 export type SignIn = {
   email: string;
@@ -34,3 +36,17 @@ export interface AuthSlice extends AuthData {
   logout: () => void;
   current: () => void;
 }
+
+export type InputData = {
+  inputId: string;
+  value: string;
+  placeholder: string;
+};
+
+export type AuthCardProps = {
+  register: UseFormRegister<SignIn>;
+  handleSubmit: UseFormHandleSubmit<SignIn>;
+  header: string;
+  pathToReturn: string;
+  inputData: InputData[];
+};
