@@ -43,10 +43,13 @@ export type InputData = {
   placeholder: string;
 };
 
+type Subtext = { part1: string; part2: string };
+
 export type AuthCardProps = {
   register: UseFormRegister<SignIn>;
   handleSubmit: UseFormHandleSubmit<SignIn>;
   header: string;
   pathToReturn: string;
   inputData: InputData[];
+  subtext: Subtext;
 };

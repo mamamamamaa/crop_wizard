@@ -4,7 +4,7 @@ import { Button } from "flowbite-react";
 import { SubmitHandler } from "react-hook-form";
 import { AuthCardProps, SignIn } from "@/types";
 
-import style from "AuthForm.module.css";
+import style from "./AuthForm.module.css";
 import { FormInput } from "@/components/FormInput/FormInput";
 
 export const AuthForm: FC<AuthCardProps> = ({
@@ -12,6 +12,7 @@ export const AuthForm: FC<AuthCardProps> = ({
   handleSubmit,
   pathToReturn,
   inputData,
+  subtext,
 }) => {
   const onSubmit: SubmitHandler<SignIn> = (data) => console.log(data);
 
@@ -19,9 +20,9 @@ export const AuthForm: FC<AuthCardProps> = ({
     <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
       <section>
         <p className={style.newUser}>
-          New user?{" "}
+          {subtext.part1}{" "}
           <Link href={pathToReturn} className={style.registerLink}>
-            Create account
+            {subtext.part2}
           </Link>
         </p>
         <div className={style.inputGroup}>

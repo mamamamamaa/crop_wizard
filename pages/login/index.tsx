@@ -17,6 +17,11 @@ const inputData = [
   },
 ];
 
+const subtext = {
+  part1: "New user?",
+  part2: "Create account",
+};
+
 const Login: TNextPageWithLayout = () => {
   const { register, handleSubmit } = useForm<SignIn>();
 
@@ -27,6 +32,7 @@ const Login: TNextPageWithLayout = () => {
       header="Sign in"
       pathToReturn="/register"
       inputData={inputData}
+      subtext={subtext}
     />
   );
 };
