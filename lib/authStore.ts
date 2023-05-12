@@ -2,7 +2,7 @@ import { createStore, useStore } from "zustand";
 import { createContext, useContext } from "react";
 
 import fetch from "@/utils/fetch";
-import { TOKEN } from "@/public/consts";
+import { LOGGED_IN, TOKEN } from "@/public/consts";
 import { devtools } from "zustand/middleware";
 import { AuthSlice, SignInReturns } from "@/types";
 import { removeCookies, setCookies } from "@/utils/cookies";
@@ -73,7 +73,7 @@ export const initializeAuthStore = (
       },
       register: async () => {},
       logout: async () => {
-        removeCookies(TOKEN);
+        removeCookies(TOKEN, LOGGED_IN);
         set(initialAuthData());
       },
     }))

@@ -1,10 +1,11 @@
-import { SignIn, TNextPageWithLayout } from "@/types";
-import { ReactElement } from "react";
-import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
-import { useForm } from "react-hook-form";
-import { AuthCard } from "@/components/AuthCard/AuthCard";
 import Head from "next/head";
+import { ReactElement } from "react";
+import { useForm } from "react-hook-form";
 import { GetServerSideProps } from "next";
+
+import { SignIn, TNextPageWithLayout } from "@/types";
+import { AuthCard } from "@/components/AuthCard/AuthCard";
+import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
 
 const inputData = [
