@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/AuthCard/AuthCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/AuthCard/AuthCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/GoogleAuth/GoogleAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/GoogleAuth/GoogleAuth.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="6dc2a25a-78d4-453d-b118-a823cca89db8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +114,7 @@
       <workItem from="1683563807061" duration="3800000" />
       <workItem from="1683609453587" duration="28984000" />
       <workItem from="1683784456572" duration="25332000" />
-      <workItem from="1683894914461" duration="666000" />
+      <workItem from="1683894914461" duration="1043000" />
     </task>
     <servers />
   </component>

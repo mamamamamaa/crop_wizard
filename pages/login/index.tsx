@@ -4,6 +4,8 @@ import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { useForm } from "react-hook-form";
 import Head from "next/head";
+import { GetServerSideProps } from "next";
+import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
 
 const inputData = [
   {
@@ -52,3 +54,11 @@ Login.getLayout = function getLayout(page: ReactElement) {
 };
 
 export default Login;
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  return (
+    restrictIfAuthenticated(context) || {
+      props: {},
+    }
+  );
+};
