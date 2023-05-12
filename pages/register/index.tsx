@@ -1,12 +1,13 @@
 import Head from "next/head";
 import { ReactElement } from "react";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { GetServerSideProps } from "next";
 
-import { SignIn, TNextPageWithLayout } from "@/types";
+import { SignIn, SignUp, TNextPageWithLayout } from "@/types";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
+import { useAuthStore } from "@/lib/authStore";
 
 const inputData = [
   {
@@ -32,16 +33,19 @@ const subtext = {
 };
 
 const Register: TNextPageWithLayout = () => {
-  const { register, handleSubmit } = useForm<SignIn>();
+  const register = useAuthStore((state) => state.register);
+  const { register: formRegister, handleSubmit } = useForm<SignIn>();
+  const onSubmit: SubmitHandler<SignUp> = (data) => register(data);
 
   return (
     <AuthCard
-      register={register}
+      register={formRegister}
       handleSubmit={handleSubmit}
       header="Sign up"
       pathToReturn="/login"
       inputData={inputData}
       subtext={subtext}
+      onSubmit={onSubmit}
     />
   );
 };

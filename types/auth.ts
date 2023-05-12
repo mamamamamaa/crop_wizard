@@ -1,4 +1,8 @@
-import { UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
+import {
+  SubmitHandler,
+  UseFormHandleSubmit,
+  UseFormRegister,
+} from "react-hook-form";
 
 export type AuthData = {
   isLoggedIn: boolean;
@@ -59,5 +63,5 @@ export type AuthCardProps = {
   pathToReturn: string;
   inputData: InputData[];
   subtext: Subtext;
-  onSubmit: Function;
+  onSubmit: SubmitHandler<SignIn | SignUp>;
 };
