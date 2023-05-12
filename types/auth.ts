@@ -58,7 +58,6 @@ type Subtext = { part1: string; part2: string };
 
 export type AuthCardProps = {
   register: UseFormRegister<SignIn> | UseFormRegister<SignUp>;
-  // register: UseFormRegister<SignIn | SignUp>;
   handleSubmit: UseFormHandleSubmit<SignIn> | UseFormHandleSubmit<SignUp>;
   header: string;
   pathToReturn: string;

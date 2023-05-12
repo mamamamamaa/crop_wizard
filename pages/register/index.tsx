@@ -8,6 +8,8 @@ import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
 import { useAuthStore } from "@/lib/authStore";
+import style from "@/components/AuthCard/AuthCard.module.css";
+import { VerifyCard } from "@/components/VerifyCard/VerifyCard";
 
 const inputData = [
   {
@@ -33,20 +35,27 @@ const subtext = {
 };
 
 const Register: TNextPageWithLayout = () => {
+  const email = useAuthStore((state) => state.email);
   const register = useAuthStore((state) => state.register);
   const { register: formRegister, handleSubmit } = useForm<SignUp>();
   const onSubmit: SubmitHandler<SignUp> = (data) => register(data);
 
   return (
-    <AuthCard
-      register={formRegister}
-      handleSubmit={handleSubmit}
-      header="Sign up"
-      pathToReturn="/login"
-      inputData={inputData}
-      subtext={subtext}
-      onSubmit={onSubmit}
-    />
+    <div className={style.sectionWrapper}>
+      {!email && (
+        <AuthCard
+          register={formRegister}
+          handleSubmit={handleSubmit}
+          header="Sign up"
+          pathToReturn="/login"
+          inputData={inputData}
+          subtext={subtext}
+          onSubmit={onSubmit}
+        />
+      )}
+
+      {email && <VerifyCard />}
+    </div>
   );
 };
 
