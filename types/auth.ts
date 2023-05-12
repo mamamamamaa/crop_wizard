@@ -57,11 +57,12 @@ export type InputData = {
 type Subtext = { part1: string; part2: string };
 
 export type AuthCardProps = {
-  register: UseFormRegister<SignIn>;
-  handleSubmit: UseFormHandleSubmit<SignIn>;
+  register: UseFormRegister<SignIn> | UseFormRegister<SignUp>;
+  // register: UseFormRegister<SignIn | SignUp>;
+  handleSubmit: UseFormHandleSubmit<SignIn> | UseFormHandleSubmit<SignUp>;
   header: string;
   pathToReturn: string;
   inputData: InputData[];
   subtext: Subtext;
-  onSubmit: SubmitHandler<SignIn | SignUp>;
+  onSubmit: SubmitHandler<SignIn> | SubmitHandler<SignUp>;
 };

@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { GetServerSideProps } from "next";
 
-import { SignIn, SignUp, TNextPageWithLayout } from "@/types";
+import { SignUp, TNextPageWithLayout } from "@/types";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
@@ -34,7 +34,7 @@ const subtext = {
 
 const Register: TNextPageWithLayout = () => {
   const register = useAuthStore((state) => state.register);
-  const { register: formRegister, handleSubmit } = useForm<SignIn>();
+  const { register: formRegister, handleSubmit } = useForm<SignUp>();
   const onSubmit: SubmitHandler<SignUp> = (data) => register(data);
 
   return (
