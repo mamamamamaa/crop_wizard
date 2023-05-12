@@ -3,6 +3,7 @@ import { SignIn, TNextPageWithLayout } from "@/types";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { useForm } from "react-hook-form";
+import Head from "next/head";
 
 const inputData = [
   {
@@ -26,19 +27,28 @@ const Login: TNextPageWithLayout = () => {
   const { register, handleSubmit } = useForm<SignIn>();
 
   return (
-    <AuthCard
-      register={register}
-      handleSubmit={handleSubmit}
-      header="Sign in"
-      pathToReturn="/register"
-      inputData={inputData}
-      subtext={subtext}
-    />
+    <>
+      <AuthCard
+        register={register}
+        handleSubmit={handleSubmit}
+        header="Sign in"
+        pathToReturn="/register"
+        inputData={inputData}
+        subtext={subtext}
+      />
+    </>
   );
 };
 
 Login.getLayout = function getLayout(page: ReactElement) {
-  return <AuthLayout>{page}</AuthLayout>;
+  return (
+    <AuthLayout>
+      <Head>
+        <title>Login</title>
+      </Head>
+      {page}
+    </AuthLayout>
+  );
 };
 
 export default Login;

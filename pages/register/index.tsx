@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { useForm } from "react-hook-form";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
+import Head from "next/head";
 
 const inputData = [
   {
@@ -43,7 +44,14 @@ const Register: TNextPageWithLayout = () => {
 };
 
 Register.getLayout = function (page: ReactElement) {
-  return <AuthLayout>{page}</AuthLayout>;
+  return (
+    <AuthLayout>
+      <Head>
+        <title>Register</title>
+      </Head>
+      {page}
+    </AuthLayout>
+  );
 };
 
 export default Register;

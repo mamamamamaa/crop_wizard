@@ -18,7 +18,6 @@ export const GoogleAuth = () => {
         />
         <span>Login with Google</span>
       </a>
-      s
     </section>
   );
 };

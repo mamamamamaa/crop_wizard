@@ -6,6 +6,7 @@ import style from "./AuthCard.module.css";
 import { Logo } from "@/components/Logo/Logo";
 import { GoogleAuth } from "@/components/GoogleAuth/GoogleAuth";
 import { AuthForm } from "@/components/AuthForm/AuthForm";
+import Link from "next/link";
 
 export const AuthCard: FC<AuthCardProps> = (props) => {
   const { header } = props;
@@ -14,7 +15,9 @@ export const AuthCard: FC<AuthCardProps> = (props) => {
     <>
       <div className={style.sectionWrapper}>
         <section className={style.logoSection}>
-          <Logo color="text-white" size={55} />
+          <Link href="/" className="flex">
+            <Logo color="text-white" size={55} />
+          </Link>
         </section>
         <section className={style.cardWrapper}>
           <header>
