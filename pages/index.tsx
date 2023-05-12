@@ -1,41 +1,30 @@
-import { useAuthStore } from "@/lib/authStore"
-import Head from "next/head"
+import Head from "next/head";
 
-import { ReactElement } from "react"
-import { Layout } from "@/components/Layout/Layout"
-import { TNextPageWithLayout } from "@/types"
+import { ReactElement, useState } from "react";
+import { Layout } from "@/components/Layout/Layout";
+import { TNextPageWithLayout } from "@/types";
+import { ReverifyTimer } from "@/components/ReverifyTimer/ReverifyTimer";
 
 const Home: TNextPageWithLayout = () => {
-  const isLoggedIn = useAuthStore((state) => state.isLoggedIn)
-  const login = useAuthStore((state) => state.login)
-
-  const googleAuthLink = `${process.env.SERVER}/api/auth/google/callback`
+  const [isTimeOut, setTimeOut] = useState<boolean>(false);
 
   return (
     <>
-      <div>
-        <Head>
-          <title>CropWizard</title>
-        </Head>
-
-        <a href={googleAuthLink}>Google auth - {String(isLoggedIn)}</a>
-      </div>
-      <div>
-        <button
-          type="button"
-          onClick={() =>
-            login({ email: "jaxiha2540@syinxun.com", password: "qwerty123456" })
-          }
-        >
-          Login
-        </button>
-      </div>
+      <ReverifyTimer setTimeOut={setTimeOut} />
+      {isTimeOut && <p>Time out</p>}
     </>
-  )
-}
+  );
+};
 
 Home.getLayout = function (page: ReactElement) {
-  return <Layout>{page}</Layout>
-}
+  return (
+    <Layout>
+      <Head>
+        <title>CropWizard</title>
+      </Head>
+      {page}
+    </Layout>
+  );
+};
 
-export default Home
+export default Home;

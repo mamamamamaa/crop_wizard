@@ -1,9 +1,9 @@
 .cardWrapper {
-    @apply w-[450px] bg-white rounded-3xl shadow-2xl px-14 py-10;
+    @apply w-[450px] bg-white rounded-3xl shadow-2xl px-7 py-8 md:px-14 md:py-10;
 }
 
 .sectionWrapper {
-    @apply flex h-screen w-screen items-center justify-center gap-24;
+    @apply flex h-screen w-screen items-center justify-center gap-24 md:p-5;
 }
 
 .logoSection{
