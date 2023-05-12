@@ -1,8 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 import { Button } from "flowbite-react";
-import { SubmitHandler } from "react-hook-form";
-import { AuthCardProps, SignIn } from "@/types";
+import { AuthCardProps } from "@/types";
 
 import style from "./AuthForm.module.css";
 import { FormInput } from "@/components/FormInput/FormInput";
@@ -13,9 +12,8 @@ export const AuthForm: FC<AuthCardProps> = ({
   pathToReturn,
   inputData,
   subtext,
+  onSubmit,
 }) => {
-  const onSubmit: SubmitHandler<SignIn> = (data) => console.log(data);
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
       <section>

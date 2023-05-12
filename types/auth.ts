@@ -59,4 +59,5 @@ export type AuthCardProps = {
   pathToReturn: string;
   inputData: InputData[];
   subtext: Subtext;
+  onSubmit: Function;
 };

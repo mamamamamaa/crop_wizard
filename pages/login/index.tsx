@@ -2,10 +2,11 @@ import type { ReactElement } from "react";
 import { SignIn, TNextPageWithLayout } from "@/types";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
+import { useAuthStore } from "@/lib/authStore";
 
 const inputData = [
   {
@@ -26,17 +27,20 @@ const subtext = {
 };
 
 const Login: TNextPageWithLayout = () => {
-  const { register, handleSubmit } = useForm<SignIn>();
+  const login = useAuthStore((state) => state.login);
+  const { register: formRegister, handleSubmit } = useForm<SignIn>();
+  const onSubmit: SubmitHandler<SignIn> = (data) => login(data);
 
   return (
     <>
       <AuthCard
-        register={register}
+        register={formRegister}
         handleSubmit={handleSubmit}
         header="Sign in"
         pathToReturn="/register"
         inputData={inputData}
         subtext={subtext}
+        onSubmit={onSubmit}
       />
     </>
   );
