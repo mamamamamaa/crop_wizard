@@ -1,0 +1,7 @@
+.verifyCard {
+    @apply bg-white rounded-3xl shadow-2xl px-7 py-8 md:px-14 md:py-10;
+}
+
+.verifyMessage {
+    @apply flex gap-4 flex-col text-gray-700;
+}

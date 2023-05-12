@@ -24,7 +24,7 @@ export const ReverifyTimer: FC<Props> = ({ setTimeOut }) => {
 
   return (
     <div>
-      <h1>{timer}</h1>
+      <h1 className="text-blue-500 text-2xl">{timer}</h1>
     </div>
   );
 };

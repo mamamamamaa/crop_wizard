@@ -1,17 +1,14 @@
 import Head from "next/head";
 
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { Layout } from "@/components/Layout/Layout";
 import { TNextPageWithLayout } from "@/types";
-import { ReverifyTimer } from "@/components/ReverifyTimer/ReverifyTimer";
+import { VerifyCard } from "@/components/VerifyCard/VerifyCard";
 
 const Home: TNextPageWithLayout = () => {
-  const [isTimeOut, setTimeOut] = useState<boolean>(false);
-
   return (
     <>
-      <ReverifyTimer setTimeOut={setTimeOut} />
-      {isTimeOut && <p>Time out</p>}
+      <VerifyCard />
     </>
   );
 };
