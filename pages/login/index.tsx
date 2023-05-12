@@ -53,8 +53,7 @@ Login.getLayout = function getLayout(page: ReactElement) {
   );
 };
 
-export default Login;
-
+// Restricted route
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return (
     restrictIfAuthenticated(context) || {
@@ -62,3 +61,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   );
 };
+
+export default Login;

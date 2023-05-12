@@ -4,6 +4,7 @@ import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import style from "./UserAvatar.module.css";
 import { useAuthStore } from "@/lib/authStore";
 import { PLACEHOLDER_IMAGE } from "@/public/consts";
+import Link from "next/link";
 
 export const UserAvatar: FC = () => {
   const { username, email, logout, avatarUrl } = useAuthStore((state) => state);
@@ -25,7 +26,9 @@ export const UserAvatar: FC = () => {
           <span className={style.nameBox}>{username}</span>
           <span className={style.emailBox}>{email}</span>
         </Dropdown.Header>
-        <Dropdown.Item>Profile</Dropdown.Item>
+        <Link href="/profile">
+          <Dropdown.Item>Profile</Dropdown.Item>
+        </Link>
         <Dropdown.Divider />
         <Dropdown.Item onClick={() => logout()}>Sign out</Dropdown.Item>
       </Dropdown>

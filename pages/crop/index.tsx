@@ -24,6 +24,7 @@ Crop.getLayout = function (page: ReactElement) {
   );
 };
 
+// Private route
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return (
     redirectIfUnauthenticated(context) || {

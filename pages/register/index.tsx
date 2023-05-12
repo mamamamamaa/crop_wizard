@@ -56,8 +56,7 @@ Register.getLayout = function (page: ReactElement) {
   );
 };
 
-export default Register;
-
+// Restricted route
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return (
     restrictIfAuthenticated(context) || {
@@ -65,3 +64,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   );
 };
+
+export default Register;
