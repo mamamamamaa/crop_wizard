@@ -4,7 +4,7 @@ import { createContext, useContext } from "react";
 import fetch from "@/utils/fetch";
 import { LOGGED_IN, TOKEN } from "@/public/consts";
 import { devtools } from "zustand/middleware";
-import { AuthSlice, SignInReturns } from "@/types";
+import { AuthSlice, SignInReturns, SignUpReturns } from "@/types";
 import { removeCookies, setCookies } from "@/utils/cookies";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
@@ -74,11 +74,38 @@ export const initializeAuthStore = (
       clearError: () => {
         set({ error: null });
       },
-      register: async () => {},
+      register: async (registerData) => {
+        try {
+          set({ isLoading: true });
+          const { data } = await fetch.post<SignUpReturns>(
+            "/api/auth/register",
+            registerData
+          );
+
+          const { username, email } = data;
+
+          set({
+            email,
+            username,
+            isLoading: false,
+          });
+        } catch (error) {
+          if (error instanceof Error) {
+            set({ isLoading: false, error: error.message });
+          }
+        }
+      },
       logout: async () => {
-        removeCookies(TOKEN, LOGGED_IN);
-        set(initialAuthData());
-        set({ error: 'error: "dasdasdsa",' });
+        try {
+          await fetch.get("/api/auth/logout");
+
+          removeCookies(TOKEN, LOGGED_IN);
+          set(initialAuthData());
+        } catch (error) {
+          if (error instanceof Error) {
+            set({ isLoading: false, error: error.message });
+          }
+        }
       },
     }))
   );

@@ -15,6 +15,12 @@ export type SignIn = {
   password: string;
 };
 
+export type SignUpReturns = {
+  message: string;
+  email: string;
+  username: string;
+};
+
 export type SignInReturns = {
   accessToken: string;
   user: {
