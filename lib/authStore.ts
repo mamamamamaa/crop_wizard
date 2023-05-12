@@ -71,10 +71,14 @@ export const initializeAuthStore = (
           }
         }
       },
+      clearError: () => {
+        set({ error: null });
+      },
       register: async () => {},
       logout: async () => {
         removeCookies(TOKEN, LOGGED_IN);
         set(initialAuthData());
+        set({ error: 'error: "dasdasdsa",' });
       },
     }))
   );

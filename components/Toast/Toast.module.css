@@ -1,0 +1,51 @@
+/*.card {*/
+/*    @apply absolute top-2 left-[50%] translate-x-[-50%] duration-1000 animate-pulse;*/
+/*}*/
+
+.card {
+    position: fixed;
+    top: -100px; /* начальное положение за пределами экрана */
+    left: 50%;
+    transform: translateX(-50%);
+    animation-name: slideIn, slideOut; /* названия анимаций */
+    animation-duration: 0.5s; /* длительность анимации */
+    animation-timing-function: ease-in-out; /* функция времени анимации */
+}
+
+@keyframes slideIn {
+    0% {
+        top: -100px; /* начальное положение за пределами экрана */
+    }
+    100% {
+        top: 20px; /* конечное положение после появления */
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        top: 20px; /* начальное положение после появления */
+    }
+    100% {
+        top: -100px; /* конечное положение за пределами экрана */
+    }
+}
+
+.message {
+    @apply ml-3 text-sm font-normal;
+}
+
+.icon {
+    @apply h-5 w-5;
+}
+
+.iconSuccessWrapper {
+    @apply inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-500 dark:bg-green-800 dark:text-green-200;
+}
+
+.iconErrorWrapper {
+    @apply inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-500 dark:bg-red-800 dark:text-red-200;
+}
+
+.iconWarningWrapper {
+    @apply inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-500 dark:bg-orange-700 dark:text-orange-200;
+}

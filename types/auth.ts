@@ -31,6 +31,7 @@ export type SignUp = {
 };
 
 export interface AuthSlice extends AuthData {
+  clearError: () => void;
   login: (loginData: SignIn) => void;
   register: (loginData: SignUp) => void;
   logout: () => void;
