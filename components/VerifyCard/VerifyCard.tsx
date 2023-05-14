@@ -9,16 +9,21 @@ export const VerifyCard: FC = () => {
 
   const { email, username } = useAuthStore((state) => state);
 
+  const toggleTimeOut = () => setTimeOut((prevState) => !prevState);
+
   return (
     <>
       <section className={style.verifyCard}>
         <article className={style.verifyMessage}>
-          <p>Dear {username},</p>
+          <p>
+            Dear <span className="font-bold">{username}</span>,
+          </p>
           <p>
             To ensure the security of your account, please complete the
-            verification process by checking your email inbox at {email}. A
-            verification email has been sent to you. If you haven&apos;t
-            received the email yet, please make sure to check your spam folder.
+            verification process by checking your email inbox at{" "}
+            <span className="font-bold">{email}</span>. A verification email has
+            been sent to you. If you haven&apos;t received the email yet, please
+            make sure to check your spam folder.
           </p>
           <p>
             If you still haven&apos;t received the email, you can click the
@@ -26,8 +31,10 @@ export const VerifyCard: FC = () => {
             resend option will be available after 30 seconds.
           </p>
           <div className="flex justify-between items-center">
-            <Button disabled={!isTimeOut}>Resend Verification Email</Button>
-            <ReverifyTimer setTimeOut={setTimeOut} />
+            <Button disabled={!isTimeOut} onClick={toggleTimeOut}>
+              Resend Verification Email
+            </Button>
+            {!isTimeOut && <ReverifyTimer toggleTimeOut={toggleTimeOut} />}
           </div>
           <p>Thank you for your cooperation.</p>
           <p>

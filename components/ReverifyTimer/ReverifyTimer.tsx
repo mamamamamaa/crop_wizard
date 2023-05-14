@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from "react";
 
 interface Props {
-  setTimeOut: Function;
+  toggleTimeOut: Function;
 }
 
-export const ReverifyTimer: FC<Props> = ({ setTimeOut }) => {
+export const ReverifyTimer: FC<Props> = ({ toggleTimeOut }) => {
   const [timer, setTimer] = useState<number>(30);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const ReverifyTimer: FC<Props> = ({ setTimeOut }) => {
     }, 1000);
 
     if (timer === 0) {
-      setTimeOut(true);
+      toggleTimeOut();
       clearInterval(countdown);
     }
 

@@ -53,7 +53,6 @@ const Register: TNextPageWithLayout = () => {
           onSubmit={onSubmit}
         />
       )}
-
       {email && <VerifyCard />}
     </div>
   );

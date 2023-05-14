@@ -7,6 +7,7 @@ import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
 import { useAuthStore } from "@/lib/authStore";
+import style from "@/components/AuthCard/AuthCard.module.css";
 
 const inputData = [
   {
@@ -33,15 +34,17 @@ const Login: TNextPageWithLayout = () => {
 
   return (
     <>
-      <AuthCard
-        register={formRegister}
-        handleSubmit={handleSubmit}
-        header="Sign in"
-        pathToReturn="/register"
-        inputData={inputData}
-        subtext={subtext}
-        onSubmit={onSubmit}
-      />
+      <div className={style.sectionWrapper}>
+        <AuthCard
+          register={formRegister}
+          handleSubmit={handleSubmit}
+          header="Sign in"
+          pathToReturn="/register"
+          inputData={inputData}
+          subtext={subtext}
+          onSubmit={onSubmit}
+        />
+      </div>
     </>
   );
 };

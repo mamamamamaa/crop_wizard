@@ -8,7 +8,7 @@ import { VerifyCard } from "@/components/VerifyCard/VerifyCard";
 const Home: TNextPageWithLayout = () => {
   return (
     <>
-      <VerifyCard />
+      <h1> Home page</h1>
     </>
   );
 };
