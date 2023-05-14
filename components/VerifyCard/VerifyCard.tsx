@@ -7,9 +7,12 @@ import style from "./VerifyCard.module.css";
 export const VerifyCard: FC = () => {
   const [isTimeOut, setTimeOut] = useState<boolean>(false);
 
-  const { email, username } = useAuthStore((state) => state);
+  const { email, username, reverify } = useAuthStore((state) => state);
 
-  const toggleTimeOut = () => setTimeOut((prevState) => !prevState);
+  const toggleTimeOut = () => {
+    reverify();
+    setTimeOut((prevState) => !prevState);
+  };
 
   return (
     <>
