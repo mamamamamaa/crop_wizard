@@ -107,6 +107,20 @@ export const initializeAuthStore = (
           }
         }
       },
+      reverify: async () => {
+        try {
+          set({ isLoading: true });
+          const email = get().email;
+
+          await fetch.post("/api/auth/reverify", { email });
+
+          set({ isLoading: false });
+        } catch (error) {
+          if (error instanceof Error) {
+            set({ isLoading: false, error: error.message });
+          }
+        }
+      },
     }))
   );
 };

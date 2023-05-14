@@ -46,6 +46,7 @@ export interface AuthSlice extends AuthData {
   register: (loginData: SignUp) => void;
   logout: () => void;
   current: () => void;
+  reverify: () => void;
 }
 
 export type InputData = {
