@@ -6,6 +6,7 @@ import { LOGGED_IN, TOKEN } from "@/public/consts";
 import { devtools } from "zustand/middleware";
 import { AuthSlice, SignInReturns, SignUpReturns } from "@/types";
 import { removeCookies, setCookies } from "@/utils/cookies";
+import { AxiosError } from "axios";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -47,6 +48,7 @@ export const initializeAuthStore = (
       login: async (loginData) => {
         try {
           set({ isLoading: true });
+
           const { data } = await fetch.post<SignInReturns>(
             "/api/auth/login",
             loginData
@@ -66,8 +68,8 @@ export const initializeAuthStore = (
             isLoggedIn: true,
           });
         } catch (error) {
-          if (error instanceof Error) {
-            set({ isLoading: false, error: error.message });
+          if (error instanceof AxiosError) {
+            set({ isLoading: false, error: error.response?.data.message });
           }
         }
       },
