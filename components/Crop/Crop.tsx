@@ -1,15 +1,5 @@
-import { FC, useEffect, useRef } from "react";
-import Image from "next/image";
+import { FC } from "react";
 
 export const Crop: FC = () => {
-  const imageRef = useRef(null);
-  // const cropper = new Cropper();
-
-  useEffect(() => {
-    if (imageRef.current) {
-      // imageRef.current.focus();
-    }
-  }, []);
-
-  return <></>;
+  return <>Hello this is Crop page</>;
 };

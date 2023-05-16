@@ -6,7 +6,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
-import { useAuthStore } from "@/lib/authStore";
+import { useAuthStore } from "@/lib/auth/store";
 import style from "@/components/AuthCard/AuthCard.module.css";
 
 const inputData = [

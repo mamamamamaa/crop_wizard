@@ -4,7 +4,7 @@ import { Navbar } from "flowbite-react";
 import { NextRouter } from "next/router";
 
 import style from "./Navigaion.module.css";
-import { useAuthStore } from "@/lib/authStore";
+import { useAuthStore } from "@/lib/auth/store";
 
 interface Props {
   router: NextRouter;

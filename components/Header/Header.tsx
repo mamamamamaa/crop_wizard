@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Navbar } from "flowbite-react";
 import { useRouter } from "next/router";
 
-import { useAuthStore } from "@/lib/authStore";
+import { useAuthStore } from "@/lib/auth/store";
 import { Logo } from "@/components/Logo/Logo";
 import { githubProfileLink } from "@/public/links";
 import { Navigation } from "@/components/Navigation/Navigation";

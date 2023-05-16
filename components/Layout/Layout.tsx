@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect } from "react";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
 import style from "./Layout.module.css";
-import { useAuthStore } from "@/lib/authStore";
+import { useAuthStore } from "@/lib/auth/store";
 import { Toast } from "@/components/Toast/Toast";
 
 interface Props {

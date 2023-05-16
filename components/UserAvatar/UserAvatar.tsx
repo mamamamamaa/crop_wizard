@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
 import style from "./UserAvatar.module.css";
-import { useAuthStore } from "@/lib/authStore";
+import { useAuthStore } from "@/lib/auth/store";
 import { PLACEHOLDER_IMAGE } from "@/public/consts";
 import Link from "next/link";
 

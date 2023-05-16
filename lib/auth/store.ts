@@ -1,12 +1,13 @@
+import { AxiosError } from "axios";
+import { devtools } from "zustand/middleware";
 import { createStore, useStore } from "zustand";
+
 import { createContext, useContext } from "react";
 
 import fetch from "@/utils/fetch";
 import { LOGGED_IN, TOKEN } from "@/public/consts";
-import { devtools } from "zustand/middleware";
 import { AuthSlice, SignInReturns, SignUpReturns } from "@/types";
 import { removeCookies, setCookies } from "@/utils/cookies";
-import { AxiosError } from "axios";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -92,8 +93,8 @@ export const initializeAuthStore = (
             isLoading: false,
           });
         } catch (error) {
-          if (error instanceof Error) {
-            set({ isLoading: false, error: error.message });
+          if (error instanceof AxiosError) {
+            set({ isLoading: false, error: error.response?.data.message });
           }
         }
       },
@@ -104,8 +105,8 @@ export const initializeAuthStore = (
           removeCookies(TOKEN, LOGGED_IN);
           set(initialAuthData());
         } catch (error) {
-          if (error instanceof Error) {
-            set({ isLoading: false, error: error.message });
+          if (error instanceof AxiosError) {
+            set({ isLoading: false, error: error.response?.data.message });
           }
         }
       },
@@ -118,11 +119,12 @@ export const initializeAuthStore = (
 
           set({ isLoading: false });
         } catch (error) {
-          if (error instanceof Error) {
-            set({ isLoading: false, error: error.message });
+          if (error instanceof AxiosError) {
+            set({ isLoading: false, error: error.response?.data.message });
           }
         }
       },
     }))
   );
 };
+console.log(fetch.defaults.headers);

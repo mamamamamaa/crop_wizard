@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { useAuthStore } from "@/lib/authStore";
+import { useAuthStore } from "@/lib/auth/store";
 import { Button } from "flowbite-react";
 import { ReverifyTimer } from "@/components/ReverifyTimer/ReverifyTimer";
 import style from "./VerifyCard.module.css";
