@@ -4,7 +4,7 @@ import { GetServerSideProps } from "next";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { useAuthStore } from "@/lib/auth/store";
-import { SignIn, TNextPageWithLayout } from "@/types";
+import { SignIn, SignUp, TNextPageWithLayout } from "@/types";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";

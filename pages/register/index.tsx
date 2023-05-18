@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { GetServerSideProps } from "next";
 
 import { useAuthStore } from "@/lib/auth/store";
-import { SignUp, TNextPageWithLayout } from "@/types";
+import { SignIn, SignUp, TNextPageWithLayout } from "@/types";
 import { AuthCard } from "@/components/AuthCard/AuthCard";
 import { VerifyCard } from "@/components/VerifyCard/VerifyCard";
 import { AuthLayout } from "@/components/AuthLayout/AuthLayout";

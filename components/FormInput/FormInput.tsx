@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Label, TextInput } from "flowbite-react";
-import { InputData, SignIn } from "@/types";
+import { InputData, SignIn, SignUp } from "@/types";
 import { UseFormRegister } from "react-hook-form";
 
 interface Props {
   data: InputData;
-  register: UseFormRegister<SignIn>;
+  register: UseFormRegister<SignIn> | UseFormRegister<SignUp>;
 }
 
 export const FormInput: FC<Props> = ({ data, register }) => {
@@ -15,6 +15,7 @@ export const FormInput: FC<Props> = ({ data, register }) => {
     <>
       <Label htmlFor={inputId} value={value} />
       <TextInput
+        type={inputId}
         id={inputId}
         placeholder={placeholder}
         required={true}
