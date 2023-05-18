@@ -10,6 +10,8 @@ import { AuthLayout } from "@/components/AuthLayout/AuthLayout";
 import { restrictIfAuthenticated } from "@/utils/restrictIfAuthenticated";
 
 import style from "@/components/AuthCard/AuthCard.module.css";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const inputData = [
   {
@@ -30,9 +32,18 @@ const subtext = {
 };
 
 const Login: TNextPageWithLayout = () => {
+  const router = useRouter();
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+
   const login = useAuthStore((state) => state.login);
   const { register: formRegister, handleSubmit } = useForm<SignIn>();
   const onSubmit: SubmitHandler<SignIn> = (data) => login(data);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      router.push("/");
+    }
+  }, [isLoggedIn]);
 
   return (
     <>
