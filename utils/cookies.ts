@@ -5,6 +5,8 @@ import qs from "querystring";
 export const removeCookies = (...args: string[]) =>
   args.forEach((key) => Cookies.remove(key));
 
+export const getCookie = (key: string) => Cookies.get(key);
+
 export const setCookies = (data: object) =>
   Object.entries(data).forEach(([key, value]) => {
     const data = typeof value === "string" ? value : JSON.stringify(value);

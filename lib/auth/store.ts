@@ -4,10 +4,10 @@ import { createStore, useStore } from "zustand";
 
 import { createContext, useContext } from "react";
 
-import fetch from "@/utils/fetch";
+import fetch, { setAuthHeader } from "@/utils/fetch";
 import { LOGGED_IN, TOKEN } from "@/public/consts";
 import { AuthSlice, SignInReturns, SignUpReturns } from "@/types";
-import { removeCookies, setCookies } from "@/utils/cookies";
+import { getCookie, removeCookies, setCookies } from "@/utils/cookies";
 
 const zustandContext = createContext<AuthStoreType | null>(null);
 
@@ -40,6 +40,10 @@ export const initializeAuthStore = (
 
   preloadedState.isLoggedIn = !isEmpty;
   setCookies({ isLoggedIn: !isEmpty });
+
+  const token = getCookie(TOKEN);
+
+  if (token) setAuthHeader(token);
 
   return createStore<AuthSlice>()(
     devtools((set, get, api) => ({
@@ -127,4 +131,3 @@ export const initializeAuthStore = (
     }))
   );
 };
-console.log(fetch.defaults.headers);
